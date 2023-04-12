@@ -1,0 +1,27 @@
+/* abstracts */
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+/* base */
+
+@import 'base/reset';
+@import 'base/typography.scss';
+
+/* components */
+
+@import 'components/buttons';
+@import 'components/card';
+@import 'components/carousel';
+@import 'components/dropdown';
+
+/* layout */
+
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/footer';
+@import 'layout/menu-btn';
+
+/* pages */
+
+@import 'pages/landing-page';

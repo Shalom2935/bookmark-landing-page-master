@@ -1,0 +1,19 @@
+body {
+
+    font-family: $fontfamily;
+    font-weight: $normal;
+    color: $textcolor;
+}
+
+h1 {
+
+    font-size: $h1;
+    color: $tertiarycolor;
+    font-weight: $bold;
+    line-height: 40px;
+}
+
+p {
+    font-size: $paragraph;
+    line-height: 25px;
+}

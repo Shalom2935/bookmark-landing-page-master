@@ -1,0 +1,87 @@
+.navbar {
+
+    @include displayflex(row,space-between,center,3.2rem);
+    color: $tertiarycolor;
+    font-size: calc(11px + 0.1vw);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &--links {
+
+        @include displayflex(row,space-between,center);
+        width: 20vw;
+
+        li {
+   
+            @media (min-width: map-get($breakpoints,'medium')) {
+
+                &:hover {
+
+                    cursor:pointer;
+                    color: $secondarycolor;
+                }
+            }
+        }
+
+        @media (max-width: 1200px) {
+            
+            width: 30vw;
+        }
+    }
+
+    .btn {
+
+        letter-spacing: 2px;
+        padding: 0.8rem 2rem;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    @media (max-width:800px) {
+
+        opacity: 0;
+        flex-direction: column;
+        justify-content: start;
+        gap: 1rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 99;
+        width: 100vw;
+        height: 100vh;
+        color: white;
+        background-color: scale-color($color: $tertiarycolor, $lightness: 5%, $alpha: 1.5%);
+
+        &--links {
+
+            flex-direction: column;
+            width: 82.5vw;
+            max-width: 400px;
+            padding-top: 6.4rem;
+            font-size: 19px;
+            text-align: center;
+
+            li {
+
+                width: 100%;
+                padding: 1.4rem;
+                border-top: 0.2px solid $textcolor;
+
+                &:last-child {
+
+                    border-bottom: 0.2px solid $textcolor;
+                }
+            }
+        }
+
+        .btn {
+
+            background-color: transparent;
+            box-shadow: none;
+            border: 2px solid white;
+            width: 82.5%;
+            max-width: 400px;
+            font-size:17px;
+        }
+    }
+}

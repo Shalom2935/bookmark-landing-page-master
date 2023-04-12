@@ -1,0 +1,39 @@
+// VARIABLES
+
+/* COLORS */
+
+$primarycolor: hsl(231, 69%, 60%);
+$secondarycolor: hsl(0, 94%, 66%);
+$tertiarycolor: hsl(229, 31%, 21%);
+$textcolor: hsl(229, 8%, 60%);
+$backgroundcolor: white;
+
+/* TYPOGRAPHY */
+
+/* size */
+
+$h1: clamp(20px,10vw,30px);
+$h2: clamp(13px,2vw,25px);;
+$paragraph: clamp(14px,4vw,20px);
+$button: 14px;
+
+/* padding */
+
+$smlscreen: 8.6vw;
+$mdscreen: 5vw;
+$lgscreen: 11.4vw;
+
+/* weight */
+
+$bold: 500;
+$normal: 400;
+
+/* family */
+
+$fontfamily: 'rubik', sans-serif;
+
+/* Map for breakpoints */
+
+$breakpoints: ('medium': 800px,
+               'large': 1200px
+               ) !default;

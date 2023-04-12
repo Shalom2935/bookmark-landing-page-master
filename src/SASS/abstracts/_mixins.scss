@@ -1,0 +1,37 @@
+// Shortcut for  display: flex
+
+@mixin displayflex($flexdirection, $justifycontent, $alignitems, $gap: 0){
+
+    display: flex;
+    flex-direction: $flexdirection;
+    justify-content: $justifycontent;
+    align-items: $alignitems;
+    gap: $gap;
+}
+
+/* swapping the text background and border color while hovering on buttons */
+
+@mixin buttonhover($background: $primarycolor) {
+
+    background-color: white;
+    color: $background;
+    border: 2px solid $background;
+}
+
+/* Place the blue background according to its position ( whether it is inside the .hero class or not) */
+
+@mixin bgblock($insidehero: true) {
+
+    position: absolute;
+    z-index: -99;
+    width: 100%;
+    height: 12.7rem;
+    background-color: $primarycolor;
+
+    @if (insidehero) {
+
+        border-radius: 0 0 0 5em;
+        right: -20%;
+        top: 3.7rem;
+    }
+}
