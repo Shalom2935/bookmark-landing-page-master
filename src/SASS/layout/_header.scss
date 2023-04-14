@@ -19,6 +19,6 @@ header {
     @media (min-width: map-get($breakpoints, 'large')) {
 
         @include displayflex(row,space-between,center);
-        padding: 3em $lgscreen 1rem 11.7vw ;
+        padding: 3em $lgscreen 1rem 13vw;
     }
 }

@@ -13,7 +13,29 @@ h1 {
     line-height: 40px;
 }
 
+h2 {
+
+    font-size: $h2;
+    color: $tertiarycolor;
+    font-weight: $bold;
+}
+
+h3 {
+
+    font-size: $h3;
+    color: $tertiarycolor;
+    font-weight: $bold;
+}
 p {
+
     font-size: $paragraph;
     line-height: 25px;
+}
+
+main ¨{
+    
+    li {
+
+    font-size: clamp(13px,5vw,18px);
+}
 }

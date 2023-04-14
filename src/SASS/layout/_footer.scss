@@ -1,0 +1,18 @@
+footer {
+
+    background-color: $tertiarycolor;
+    color: white;
+    @include displayflex(column,center,center,2.5rem);
+    padding: 3rem;
+
+    ul {
+
+        @include displayflex(column,center,center,2rem);
+        letter-spacing: 3px;
+    }
+
+    .social-networks {
+
+        @include displayflex(row,center,center,2rem)
+    }
+}

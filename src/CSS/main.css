@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* abstracts */
 /* COLORS */
 /* TYPOGRAPHY */
@@ -5,6 +6,7 @@
 /* padding */
 /* weight */
 /* family */
+/* border */
 /* Map for breakpoints */
 /* swapping the text background and border color while hovering on buttons */
 /* Place the blue background according to its position ( whether it is inside the .hero class or not) */
@@ -41,15 +43,31 @@ h1 {
   line-height: 40px;
 }
 
+h2 {
+  font-size: clamp(16px, 7vw, 25px);
+  color: hsl(229, 31%, 21%);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: clamp(15px, 5.5vw, 23px);
+  color: hsl(229, 31%, 21%);
+  font-weight: 500;
+}
+
 p {
-  font-size: clamp(14px, 4vw, 20px);
+  font-size: clamp(14px, 4vw, 19px);
   line-height: 25px;
+}
+
+main ¨ li {
+  font-size: clamp(13px, 5vw, 18px);
 }
 
 /* components */
 .btn {
   cursor: pointer;
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1.2rem;
   border: none;
   border-radius: 6px;
   box-shadow: 2px 7px 2px rgb(229, 240, 250);
@@ -84,6 +102,50 @@ p {
   border: 2px solid hsl(229, 8%, 60%);
 }
 
+.card {
+  padding: 3rem 0 1.5rem 0;
+  border-radius: 15px;
+  box-shadow: 1px 10px 7px 1px rgb(235, 241, 245);
+}
+.card--logo {
+  margin-bottom: 1.7rem;
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+.card p {
+  margin-bottom: 1.5rem;
+}
+.card .dots {
+  margin-bottom: 1.2rem;
+}
+.card .btn {
+  width: 83%;
+}
+
+.questions--zone {
+  width: 100%;
+}
+.questions--zone > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0;
+  flex-wrap: wrap;
+  padding: 1.5rem 0 1.1rem 0;
+  border-bottom: 0.1px solid rgb(219, 217, 217);
+  color: hsl(229, 31%, 21%);
+}
+.questions--zone p.answer {
+  padding-top: 1.6rem;
+  padding-bottom: 0.6rem;
+  color: hsl(229, 8%, 60%);
+}
+.questions--zone .arrow.active svg path {
+  stroke: hsl(0, 94%, 66%);
+}
+
 /* layout */
 header {
   display: flex;
@@ -115,7 +177,7 @@ header .logo {
     justify-content: space-between;
     align-items: center;
     gap: 0;
-    padding: 3em 11.4vw 1rem 11.7vw;
+    padding: 3em 11.4vw 1rem 13vw;
   }
 }
 
@@ -181,10 +243,10 @@ header .logo {
   .navbar--links li {
     width: 100%;
     padding: 1.4rem;
-    border-top: 0.2px solid hsl(229, 8%, 60%);
+    border-top: 0.1px solid rgb(219, 217, 217);
   }
   .navbar--links li:last-child {
-    border-bottom: 0.2px solid hsl(229, 8%, 60%);
+    border-bottom: 0.1px solid rgb(219, 217, 217);
   }
   .navbar .btn {
     background-color: transparent;
@@ -194,6 +256,32 @@ header .logo {
     max-width: 400px;
     font-size: 17px;
   }
+}
+
+footer {
+  background-color: hsl(229, 31%, 21%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3rem;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  letter-spacing: 3px;
+}
+footer .social-networks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .menu {
@@ -207,6 +295,7 @@ header .logo {
   gap: 0;
 }
 .menu--hamburger, .menu--hamburger::after, .menu--hamburger::before {
+  border-radius: 100px;
   width: 100%;
   height: 0.2rem;
   background-color: black;
@@ -228,24 +317,29 @@ header .logo {
 }
 
 /* pages */
-main {
+body {
+  overflow-x: hidden;
+}
+
+section {
   padding-left: 8.6vw;
   padding-right: 8.6vw;
   padding-top: 3.6rem;
 }
 @media (min-width: 800px) {
-  main {
+  section {
     padding-left: 5vw;
     padding-right: 5vw;
   }
 }
 @media (min-width: 1200px) {
-  main {
+  section {
     padding-left: 11.4vw;
     padding-right: 11.4vw;
   }
 }
 
+/* hero section */
 .hero {
   display: flex;
   flex-direction: column;
@@ -254,6 +348,7 @@ main {
   gap: 3.3rem;
   position: relative;
   text-align: center;
+  margin-bottom: 5.5rem;
 }
 .hero--img {
   width: 115%;
@@ -267,11 +362,11 @@ main {
   position: absolute;
   z-index: -99;
   width: 100%;
-  height: 12.7rem;
+  height: 55vw;
   background-color: hsl(231, 69%, 60%);
-  border-radius: 0 0 0 5em;
-  right: -20%;
-  top: 3.7rem;
+  border-radius: 0 0 0 6.5em;
+  right: -14%;
+  top: clamp(28px, 28vw, 150px);
 }
 .hero--intro {
   display: flex;
@@ -287,4 +382,229 @@ main {
   align-items: center;
   gap: 10px;
   padding-top: 0.5rem;
+}
+
+/* features section */
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  margin-bottom: 5.5rem;
+}
+.features--intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.features--list {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 800px) {
+  .features--list ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    border-bottom: 0.1px solid rgb(219, 217, 217);
+    margin: auto;
+    width: 60vw;
+    max-width: 40em;
+  }
+  .features--list ul .red-border {
+    display: none;
+  }
+  .features--list ul li {
+    border: none;
+    text-align: center;
+  }
+}
+.features--list li {
+  position: relative;
+  border-top: 0.1px solid rgb(219, 217, 217);
+  padding: 1.2rem 0;
+  color: hsl(229, 8%, 60%);
+  cursor: pointer;
+}
+.features--list li.active, .features--list li:hover {
+  color: hsl(229, 31%, 21%);
+}
+.features--list li:last-of-type {
+  border-bottom: 0.1px solid rgb(219, 217, 217);
+}
+.features > div:not(.features--intro, .features--list) {
+  position: relative;
+  text-align: center;
+}
+.features .image {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+.features .image img {
+  width: 100%;
+}
+.features .image .blue-bg {
+  position: absolute;
+  z-index: -99;
+  width: 100%;
+  height: 55vw;
+  background-color: hsl(231, 69%, 60%);
+  border-radius: 0 0 6.5em 0;
+  left: -14%;
+  top: 8.5vw;
+}
+.features .red-border.active {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 38%;
+  max-width: 150px;
+  height: 5px;
+  background-color: hsl(0, 94%, 66%);
+}
+
+.bookmark--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search .image {
+  transform: translateY(0.9em);
+}
+.search .image .blue-bg {
+  transform: translateY(12.5vw);
+}
+.search--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.share .image {
+  transform: translateY(0.9em);
+}
+.share .image .blue-bg {
+  transform: translateY(12.5vw);
+}
+.share--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.visually-hidden, .visually-hidden * {
+  display: none;
+}
+
+.extensions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  text-align: center;
+  margin-bottom: 5.5rem;
+}
+.extensions--intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 7rem;
+}
+.questions--intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background-color: hsl(231, 69%, 60%);
+  padding: 3rem 0;
+}
+.contact h3 {
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+.contact h2 {
+  color: white;
+  text-align: center;
+  margin-top: 0.7rem;
+  line-height: 35px;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-top: 2rem;
+  width: 100%;
+}
+.contact form label {
+  width: 83%;
+  position: relative;
+}
+.contact form label input {
+  width: 100%;
+  padding: 0.95rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  color: gray;
+  font-weight: 500;
+}
+.contact form label input.invalid {
+  border: 4px solid hsl(0, 94%, 66%);
+  background-image: url("../../../images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: 97%;
+}
+.contact form p.error {
+  display: none;
+  background-color: hsl(0, 94%, 66%);
+  color: white;
+  width: 83%;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 500;
+  padding-left: 0.4rem;
+}
+.contact form input {
+  width: 83%;
+  box-shadow: none;
+  margin-top: 1rem;
 }/*# sourceMappingURL=main.css.map */

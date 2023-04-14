@@ -1,4 +1,8 @@
-main {
+body {
+
+    overflow-x: hidden;
+}
+section {
     
     padding-left: $smlscreen;
     padding-right: $smlscreen;
@@ -17,11 +21,13 @@ main {
     }
 }
 
+/* hero section */
 .hero {
 
     @include displayflex(column, space-between, center,3.3rem);
     position: relative;
     text-align: center;
+    margin-bottom: 5.5rem;
 
     &--img {
 
@@ -52,3 +58,252 @@ main {
     }
 }
 
+/* features section */
+.features {
+
+    @include displayflex(column,space-between,center,2rem);
+    text-align: center;
+    margin-bottom: 5.5rem;
+
+    &--intro {
+
+        @include displayflex(column,center,center,1rem);
+    }
+
+    &--list {
+
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+
+        ul {
+
+            @media (min-width: map-get($breakpoints,'medium')) {
+
+                @include displayflex(row,space-between,center);
+                border-bottom: $border;
+                margin: auto;
+                width: 60vw;
+                max-width: 40em;
+
+                .red-border {
+
+                    display: none;
+                }
+
+                li {
+
+                    border: none;
+                    text-align: center;
+                }
+                
+
+                
+            }
+        }
+
+        li {
+
+            position: relative;
+            border-top: $border;
+            padding: 1.2rem 0;
+            color: $textcolor;
+            cursor: pointer;
+
+            &.active, &:hover {
+
+                color: $tertiarycolor;
+            }
+
+            &:last-of-type {
+
+                border-bottom: $border;
+            }
+        }
+    }
+
+    > div:not(.features--intro,.features--list) {
+
+        position: relative;
+        text-align: center;
+    }
+    
+    .image {
+    
+        width: 100%;
+        margin-bottom: 5rem;
+
+        img {
+            
+            width: 100%;
+        }
+
+        .blue-bg {
+
+            @include bgblock(false);
+        }
+    }
+
+    .red-border.active {
+
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-100%);
+        width: 38%;
+        max-width: 150px;
+        height: 5px;
+        background-color: $secondarycolor;
+    }
+}
+
+.bookmark {
+    
+
+    &--text {
+
+        @include displayflex(column,center,center,1rem)
+    }
+}
+
+.search {
+
+    .image {
+
+        transform: translateY(0.9em);
+
+        .blue-bg {
+            
+            transform: translateY(12.5vw);
+        }
+    }
+
+    &--text {
+
+        @include displayflex(column,center,center,1rem);
+    }
+}
+
+.share {
+
+    .image {
+
+        transform: translateY(0.9em);
+        
+        .blue-bg {
+            
+            transform: translateY(12.5vw);
+        }
+    }
+
+    &--text {
+
+        @include displayflex(column,center,center,1rem);
+    }
+}
+
+.visually-hidden {
+
+    &, * {
+        
+        display: none;
+    }
+}
+
+.extensions {
+
+    @include displayflex(column,center,center,2.4rem);
+    text-align: center;
+    margin-bottom: 5.5rem;
+
+    &--intro {
+
+        @include displayflex(column,center,center,1rem);
+    }
+}
+.questions {
+
+    @include displayflex(column,center,center,3rem);
+    margin-bottom: 7rem;
+
+    &--intro {
+
+        @include displayflex(column,center,center,1rem);
+        text-align: center;
+    }
+}
+
+.contact {
+
+    @include displayflex(column,center,center);
+    background-color: $primarycolor;
+    padding: 3rem 0;
+    
+    h3 {
+
+        color: white;
+        font-size: 17px;
+        font-weight: $normal;
+        letter-spacing: 5px;
+    }
+
+    h2 {
+
+        color: white;
+        text-align: center;
+        margin-top: 0.7rem;
+        line-height: 35px;
+    }
+
+    form {
+
+        @include displayflex(column,center,center);
+        margin-top: 2rem;
+        width: 100%;
+
+        label {
+
+            width: 83%;
+            position: relative;
+
+            input {
+
+                width: 100%;
+                padding:0.95rem 1.2rem;
+                border-radius: 6px ;
+                border: none;
+                font-size: 14px;
+                color: gray;
+                font-weight: $bold;
+            }
+
+            input.invalid {
+                
+                border: 4px solid $secondarycolor;
+                background-image: url("../../../images/icon-error.svg");
+                background-repeat: no-repeat;
+                background-position: 97% ;
+            }
+        }
+        
+
+        p.error {
+
+            display: none;
+            background-color: $secondarycolor;
+            color: white;
+            width: 83%;
+            font-size: 11px;
+            font-style: italic;
+            font-weight: $bold;
+            padding-left: 0.4rem;
+        }
+
+        input {
+
+            width: 83%;
+            box-shadow: none;
+            margin-top: 1rem;
+        }
+
+    }
+}
