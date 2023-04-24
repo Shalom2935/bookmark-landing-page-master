@@ -12,8 +12,8 @@ $backgroundcolor: white;
 
 /* size */
 
-$h1: clamp(20px,10vw,30px);
-$h2: clamp(16px,7vw,25px);
+$h1: clamp(20px,calc(1.5vw + 25px),50px);
+$h2: clamp(16px,calc(1vw + 18px),35px);
 $h3: clamp(15px,5.5vw,23px);
 $paragraph: clamp(14px,4vw,19px);
 $button: 14px;
@@ -40,5 +40,11 @@ $border: 0.1px solid rgb(219, 217, 217);
 /* Map for breakpoints */
 
 $breakpoints: ('medium': 800px,
+                'lmedium': 1000px,
                'large': 1200px
                ) !default;
+
+// @function media($screen){
+
+    
+// }

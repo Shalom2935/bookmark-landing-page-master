@@ -3,7 +3,8 @@ footer {
     background-color: $tertiarycolor;
     color: white;
     @include displayflex(column,center,center,2.5rem);
-    padding: 3rem;
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
 
     ul {
 
@@ -14,5 +15,29 @@ footer {
     .social-networks {
 
         @include displayflex(row,center,center,2rem)
+    }
+
+    @media (min-width:map-get($breakpoints,'medium')) {
+
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: $mdscreen;
+        padding-right: $mdscreen;
+
+        ul {
+
+            flex-direction: row;
+        }
+
+        .social-networks {
+
+            margin-left:auto;
+        }
+    }
+
+    @media (min-width:map-get($breakpoints,'large')) {
+
+        padding-left: $lgscreen;
+        padding-right: $lgscreen;
     }
 }
