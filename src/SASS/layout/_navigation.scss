@@ -5,6 +5,7 @@
     font-size: calc(11px + 0.1vw);
     text-transform: uppercase;
     letter-spacing: 2px;
+    transition: all 0.3s ease;
 
     &--links {
 
@@ -40,12 +41,13 @@
     @media (max-width:800px) {
 
         opacity: 0;
+        visibility: hidden;
         flex-direction: column;
         justify-content: start;
         gap: 1rem;
         position: absolute;
-        right: 0;
-        top: 0;
+        left: 0;
+        bottom: 0;
         z-index: 99;
         width: 100vw;
         height: 100vh;
@@ -84,4 +86,9 @@
             font-size:17px;
         }
     }
+}
+.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: all 0.3s ease;
 }

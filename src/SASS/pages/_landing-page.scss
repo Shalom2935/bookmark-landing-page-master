@@ -162,9 +162,12 @@ section {
                 color: $tertiarycolor;
             }
 
+            @media (hover: hover){
+                
             &:hover {
 
                 color: $secondarycolor;
+            }
             }
 
             &:last-of-type {
@@ -206,7 +209,7 @@ section {
         position: absolute;
         left: 50%;
         transform: translate(-50%,-100%);
-        width: 38%;
+        width: 38% !important;
         max-width: 150px;
         height: 5px;
         background-color: $secondarycolor;
@@ -236,7 +239,7 @@ section {
         }
         .blue-bg {
 
-            max-width: 63%;
+            max-width: 40vw;
             max-height: 30vw;
 
             @media (min-width:map-get($breakpoints,'large')) {
@@ -291,7 +294,7 @@ section {
         }
         .blue-bg {
 
-            width: 80vw !important;
+            width: 70vw !important;
             height: 35vw !important;
             left: -37vw !important;
             top: -2vw !important;
@@ -493,7 +496,7 @@ section {
 
         @media (min-width:map-get($breakpoints,'medium')) {
 
-            @include displayflex(row,center,center,15px);
+            @include displayflex(row,center,baseline,15px);
             max-width: 700px;
 
             label {
@@ -515,12 +518,15 @@ section {
             input {
 
                 width: 100%;
+                position: relative;
                 padding:0.95rem 1.2rem;
                 border-radius: 6px ;
                 border: none;
+                outline: none;
                 font-size: 14px;
                 color: gray;
                 font-weight: $bold;
+                z-index: 9;
             }
 
             input.invalid {
@@ -533,16 +539,27 @@ section {
         }
         
 
-        p.error {
+        p {
 
             display: none;
+            position: relative;
             background-color: $secondarycolor;
+            border-radius: 4px;
             color: white;
-            width: 83%;
+            width: 102.5%;
+            height: 70px;
+            bottom: 3.2rem;
+            left: -1.15%;
             font-size: 11px;
             font-style: italic;
             font-weight: $bold;
+            padding-top: 50px;
             padding-left: 0.4rem;
+
+            &.error {
+
+                display: block;
+            }
         }
 
         input {
@@ -553,4 +570,9 @@ section {
         }
 
     }
+}
+
+.no-scroll {
+
+    overflow: hidden;
 }

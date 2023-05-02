@@ -24,14 +24,25 @@
         color: $textcolor;
     }
 
-    .arrow.active {
+    .arrow {
+        transition: transform 0.3s ease;
+        @media(hover:hover){
 
-        svg {
+            cursor: pointer;
+        }
 
-            path {
+        &.active {
 
-                stroke: $secondarycolor;
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+            svg {
+    
+                path {
+    
+                    stroke: $secondarycolor;
+                }
             }
         }
     }
+
 }
